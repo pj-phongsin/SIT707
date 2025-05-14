@@ -3,10 +3,10 @@ name: Maven CI for Task 9.1P
 on:
   push:
     paths:
-      - 'task9.1P/**'
+      - 'task9_1P/**'
   pull_request:
     paths:
-      - 'task9.1P/**'
+      - 'task9_1P/**'
 
 jobs:
   build:
@@ -14,7 +14,7 @@ jobs:
 
     defaults:
       run:
-        working-directory: task9.1P
+        working-directory: task9_1P
 
     steps:
     - name: Checkout code
