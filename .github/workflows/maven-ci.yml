@@ -1,30 +1,24 @@
-name: Maven CI for Task 9.1P
+name: Maven CI with JUnit
 
 on:
   push:
-    paths:
-      - 'task9_1P/**'
+    branches: [main]
   pull_request:
-    paths:
-      - 'task9_1P/**'
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: task9_1P
-
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'temurin'
-        java-version: '17'
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
 
-    - name: Build and test with Maven
-      run: mvn test
+      - name: Build and test with Maven
+        run: mvn test
